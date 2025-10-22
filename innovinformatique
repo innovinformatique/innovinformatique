@@ -1,0 +1,269 @@
+<!--
+  ملف: InnovInformatique_site_template.html
+  وصف: قالب موقع ثنائي اللغة (العربية/الفرنسية) لبوابة مشروع "InnovInformatique – مشروع الذكاء والترجمة الأمازيغية"
+  تعليمات سريعة:
+  1) هذا ملف HTML جاهز للنسخ واللصق. يمكنك رفعه مباشرة على استضافة (GitHub Pages, Netlify, Vercel) أو فتحه محليًا.
+  2) النموذج (form) داخل الصفحة مُعد ليُرسل عبر خدمة Formspree (افتراضي) — استبدل قيمة ACTION بعنوان Formspree أو Google Form الخاص بك.
+     - لاستخدام Formspree: سجّل في https://formspree.io/ ثم ضع رابط endpoint في الخاصية action.
+     - لاستخدام Google Forms: أنشئ Google Form، ثم استبدل عنصر <form> بزر يفتح رابط الـGoogle Form أو ضع embed الموافقة.
+  3) لتوصيل البيانات إلى Google Sheets بسهولة: أنشئ Google Form، ثم انسخ "Embed" وألصقه في القسم الملاحظ.
+  4) غيّر team email وروابط الـWhatsApp/Discord ومكان اللقاء حسب الحاجة.
+-->
+
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>InnovInformatique – مشروع الذكاء والترجمة الأمازيغية</title>
+  <style>
+    :root{--accent:#1d4ed8;--muted:#6b7280}
+    *{box-sizing:border-box}
+    body{font-family:Tahoma, "Segoe UI", Roboto, Arial;line-height:1.6;margin:0;color:#111;background:#f7fafc}
+    header{background:#fff;border-bottom:1px solid #e6eef8}
+    .container{max-width:980px;margin:0 auto;padding:18px}
+    .logo{display:flex;gap:12px;align-items:center}
+    .logo .mark{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,#2563eb,#06b6d4);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+    nav a{margin-left:12px;color:var(--muted);text-decoration:none}
+    .hero{background:linear-gradient(0deg,rgba(29,78,216,0.06),transparent);padding:36px;border-radius:10px;margin-top:18px}
+    h1{margin:0 0 6px 0;font-size:20px}
+    p.lead{margin:6px 0 16px 0;color:#0f172a}
+    .cta{display:inline-block;padding:12px 18px;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none;font-weight:600}
+    section{background:#fff;padding:18px;border-radius:10px;margin-top:18px;border:1px solid #e6eef8}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .team-card{display:flex;gap:12px;align-items:center}
+    .avatar{width:64px;height:64px;border-radius:10px;background:#eef2ff;display:flex;align-items:center;justify-content:center;color:#334155;font-weight:700}
+    label{display:block;margin-bottom:6px;font-weight:600}
+    input[type=text],input[type=email],select,textarea{width:100%;padding:10px;border:1px solid #e6eef8;border-radius:8px}
+    .checkboxes{display:flex;flex-wrap:wrap;gap:8px}
+    .small{font-size:13px;color:var(--muted)}
+    footer{margin-top:18px;padding:18px;text-align:center;color:var(--muted);font-size:14px}
+    @media(min-width:900px){.grid{grid-template-columns:2fr 1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div class="logo">
+          <div class="mark">II</div>
+          <div>
+            <div style="font-weight:800">InnovInformatique</div>
+            <div class="small">مشروع الذكاء والترجمة الأمازيغية — Traduction & Dubbing Amazighe ↔ English</div>
+          </div>
+        </div>
+        <nav>
+          <a href="#accueil">الصفحة الرئيسية</a>
+          <a href="#projet">Le Projet</a>
+          <a href="#equipe">L’Équipe</a>
+          <a href="#rejoindre" class="cta">شارك في المشروع</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- الصفحة الرئيسية -->
+    <section id="accueil" class="hero">
+      <h1>انضم إلى فريق من طلاب المعلوماتية</h1>
+      <p class="lead">اعمل معنا على بناء أول تطبيق ترجمة ودبلجة بالأمازيغية والإنجليزية — مشروع طلابي تعاوني داخل كلية العلوم، جامعة ابن زهر.</p>
+      <a href="#rejoindre" class="cta">🔹 شارك في المشروع / Rejoindre le projet</a>
+    </section>
+
+    <!-- صفحة المشروع -->
+    <section id="projet">
+      <h2>Le Projet / وصف المشروع</h2>
+      <p><strong>وصف مختصر:</strong> تطبيق ذكي للترجمة والدبلجة بين الأمازيغية والإنجليزية، يعتمد على الذكاء الاصطناعي، ويهدف إلى تطوير معجم أمازيغي ديناميكي يضيف كلمات جديدة وينشرها رقمياً.</p>
+      <p><strong>الهدف العلمي:</strong> تعزيز المحتوى الأمازيغي الرقمي وتطبيق مفاهيم البرمجة والخوارزميات ومعالجة الصوت التي ندرسها في مسار Informatique.</p>
+      <p><strong>فقرة تحفيزية:</strong> نبحث عن طلاب متحمسين للعمل الجماعي وتطوير مهاراتهم التقنية واللغوية في بيئة تشاركية داخل كلية العلوم بن زهر.</p>
+    </section>
+
+    <!-- فريق العمل -->
+    <section id="equipe">
+      <h2>L’Équipe / الفريق</h2>
+      <div class="grid">
+        <div>
+          <div class="team-card">
+            <div class="avatar">AA</div>
+            <div>
+              <div style="font-weight:700">أحمد أ.</div>
+              <div class="small">Informatique — S1 — اهتمامات: برمجة، معالجة صوت</div>
+            </div>
+          </div>
+
+          <div class="team-card" style="margin-top:12px">
+            <div class="avatar">SS</div>
+            <div>
+              <div style="font-weight:700">سمية س.</div>
+              <div class="small">Informatique — S1 — اهتمامات: تصميم واجهات، UX</div>
+            </div>
+          </div>
+
+          <p style="margin-top:12px">نحن مجموعة من طلاب S1 في Informatique نؤمن بالتعلّم الجماعي، ونبحث عن أعضاء جدد للانضمام إلى النسخة الثانية من الفريق في S2.</p>
+        </div>
+
+        <div>
+          <h3>🧠 المهارات المطلوبة (اقتراح)</h3>
+          <ul>
+            <li>Python — معالجة لغة طبيعية (NLP) وواجهات برمجة التطبيقات</li>
+            <li>Web (HTML/CSS/JS) — لإنشاء واجهة التطبيق</li>
+            <li>Montage vidéo / Audio — لدبلجة المحتوى</li>
+            <li>مسؤول لغوي أمازيغية / إنجليزية</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- صفحة التسجيل -->
+    <section id="rejoindre">
+      <h2>Rejoindre le projet / الإستمارة</h2>
+      <p class="small">املأ الاستمارة التالية للترشح. (الأسئلة باللغة العربية ثم بالفرنسية).</p>
+
+      <!--
+        ملاحظة تقنية: حقل الـform مُعد للاستخدام مع Formspree كمثال.
+        استبدل قيمة action="https://formspree.io/f/your-id" برابط endpoint الخاص بك من Formspree
+        أو ضع بدلاً من <form> زرًا يفتح Google Form. (التعليمات في رأس الملف)
+      -->
+
+      <form action="https://formspree.io/f/your-id" method="POST">
+        <div class="grid">
+          <div>
+            <label>1. الاسم الكامل / Nom complet</label>
+            <input type="text" name="fullname" placeholder="الاسم الكامل" required>
+
+            <label style="margin-top:10px">2. البريد الإلكتروني / Email</label>
+            <input type="email" name="email" placeholder="name@univ.uca.ma أو شخصي" required>
+
+            <label style="margin-top:10px">3. الشعبة أو التخصص / Filière</label>
+            <select name="filiere">
+              <option>-- اختر --</option>
+              <option>S1 Informatique</option>
+              <option>S2 Informatique</option>
+              <option>SIE</option>
+              <option>AD</option>
+              <option>IFO</option>
+            </select>
+
+            <label style="margin-top:10px">4. نقط الرياضيات في المراقبات (البكالوريا)</label>
+            <input type="text" name="math_score" placeholder="مثال: 14.5">
+
+            <label style="margin-top:10px">5. نقط الفيزياء في المراقبات (البكالوريا)</label>
+            <input type="text" name="phys_score" placeholder="مثال: 12">
+          </div>
+
+          <div>
+            <label>6. هل تتحدث الأمازيغية (تسوسيت)؟ / Parlez-vous amazighe (Tasoussit)?</label>
+            <div class="checkboxes">
+              <label><input type="radio" name="amazigh_level" value="yes_fluent"> نعم بطلاقة</label>
+              <label><input type="radio" name="amazigh_level" value="yes_some"> نعم قليلاً</label>
+              <label><input type="radio" name="amazigh_level" value="no"> لا</label>
+            </div>
+
+            <label style="margin-top:10px">7. هل لديك خبرة في البرمجة أو التصميم؟ / Compétences</label>
+            <div class="checkboxes">
+              <label><input type="checkbox" name="skills" value="python"> Python</label>
+              <label><input type="checkbox" name="skills" value="c_cpp"> C / C++</label>
+              <label><input type="checkbox" name="skills" value="web"> Web (HTML, CSS, JS)</label>
+              <label><input type="checkbox" name="skills" value="montage"> Montage vidéo / Audio</label>
+              <label><input type="checkbox" name="skills" value="other"> Autre (اذكرها): <input type="text" name="skill_other" style="width:140px"></label>
+            </div>
+
+            <label style="margin-top:10px">8. هل سبق أن شاركت في مشروع جماعي؟ / Avez-vous déjà participé à un projet?</label>
+            <div class="checkboxes"><label><input type="radio" name="team_exp" value="yes"> نعم</label>
+            <label><input type="radio" name="team_exp" value="no"> لا</label></div>
+
+            <label style="margin-top:10px">9. هل تفضل العمل الفردي أم الجماعي؟</label>
+            <div class="checkboxes">
+              <label><input type="radio" name="pref_work" value="team"> الجماعي</label>
+              <label><input type="radio" name="pref_work" value="solo"> الفردي</label>
+              <label><input type="radio" name="pref_work" value="both"> كلاهما حسب المهمة</label>
+            </div>
+
+            <label style="margin-top:10px">10. هل يمكنك تخصيص 4 ساعات في يوم أو يومين أسبوعيًا للقاء الفريق؟</label>
+            <div class="checkboxes">
+              <label><input type="radio" name="availability" value="yes"> نعم بالتأكيد</label>
+              <label><input type="radio" name="availability" value="maybe"> ربما حسب جدول الدراسة</label>
+              <label><input type="radio" name="availability" value="no"> لا</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- القسم 3 -->
+        <div style="margin-top:12px">
+          <label>11. هل تنوي متابعة الدراسة إلى مستوى Master؟ / Master?</label>
+          <div class="checkboxes"><label><input type="radio" name="master" value="yes"> نعم</label>
+          <label><input type="radio" name="master" value="unsure"> غير متأكد بعد</label>
+          <label><input type="radio" name="master" value="no"> لا</label></div>
+
+          <label style="margin-top:10px">12. ما الذي يدفعك للانضمام إلى هذا المشروع؟ (50 إلى 100 كلمة)</label>
+          <textarea name="motivation" rows="5" placeholder="اكتب دوافعك هنا..." required></textarea>
+
+          <label style="margin-top:10px">13. ما الدور الذي تود أن تلعبه داخل الفريق؟ / Rôle souhaité</label>
+          <div class="checkboxes">
+            <label><input type="checkbox" name="roles" value="dev"> مبرمج</label>
+            <label><input type="checkbox" name="roles" value="designer"> مصمم</label>
+            <label><input type="checkbox" name="roles" value="linguist"> مسؤول لغوي (أمازيغية / إنجليزية)</label>
+            <label><input type="checkbox" name="roles" value="coord"> منسق فريق</label>
+            <label>آخر: <input type="text" name="role_other" style="width:180px"></label>
+          </div>
+
+          <label style="margin-top:10px">14. ما المهارة التي تتمنى تطويرها من خلال المشروع؟</label>
+          <input type="text" name="skill_develop" placeholder="اجابة قصيرة">
+
+          <label style="margin-top:10px">15. ما رأيك في فكرة دمج الأمازيغية في عالم البرمجة والتقنية؟</label>
+          <textarea name="vision" rows="3" placeholder="اجابة مفتوحة"></textarea>
+
+          <div style="margin-top:12px;display:flex;gap:12px;align-items:center">
+            <button type="submit" class="cta">إرسال / Envoyer</button>
+            <div class="small">بعد الإرسال، سنراسلكم عبر البريد للرد ومواعيد اللقاء.</div>
+          </div>
+        </div>
+      </form>
+
+      <hr style="margin-top:16px;margin-bottom:16px">
+      <p class="small">خيار بديل: إذا أردت استخدام Google Form لحفظ الإجابات مباشرة في Google Sheets، أنشئ Google Form ثم انسخ "Embed" واطرحه هنا بدلاً من <form> أعلاه.</p>
+
+    </section>
+
+    <!-- صفحة الاتصال -->
+    <section id="contact">
+      <h2>Contact / تواصل معنا</h2>
+      <p>البريد الإلكتروني: <a href="mailto:team.amazightech@gmail.com">team.amazightech@gmail.com</a></p>
+      <p>رابط مجموعة واتساب أو ديسكورد: <span class="small">(أدخل الرابط هنا)</span></p>
+      <p>مكان اللقاءات: مكتبة كلية العلوم – جامعة ابن زهر</p>
+
+      <h3>نموذج مراسلة سريع</h3>
+      <form action="mailto:team.amazightech@gmail.com" method="GET" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <input type="text" name="name" placeholder="الاسم" required>
+        <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+        <input type="text" name="subject" placeholder="الموضوع" style="grid-column:1/span2">
+        <textarea name="message" rows="4" placeholder="نص الرسالة" style="grid-column:1/span2"></textarea>
+        <button type="submit" class="cta" style="grid-column:1/span2">إرسال</button>
+      </form>
+    </section>
+
+    <!-- قسم المزايا -->
+    <section>
+      <h2>🧠 المزايا التي سيحصل عليها المنخرطون</h2>
+      <ul>
+        <li>شهادة مشاركة من الفريق في نهاية السنة.</li>
+        <li>تجربة تطبيقية حقيقية لتقوية السيرة الذاتية (CV).</li>
+        <li>فرص لتقديم المشروع أمام أساتذة وطلبة الكلية.</li>
+        <li>اكتساب مهارات برمجة وتعاون فعلي.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    InnovInformatique — مشروع الذكاء والترجمة الأمازيغية • تم إعداد القالب ليتم نشره على نطاق مجاني مثل https://innovinformatique.site (تحتاج لحجز النطاق ونشر)
+  </footer>
+
+  <!--
+    ملاحظات نهائية:
+    - لتغيير اللغة الافتراضية إلى الفرنسية: ضع lang="fr" و dir="ltr" في وسم <html>.
+    - لتحويل الاستمارة إلى Google Form: أنشئ Form جديد، انسخ كود embed من "Send" -> "Embed" -> ألصقه هنا.
+    - إذا أردت ملف ZIP أو مساعدة في رفعه على GitHub Pages أستطيع تزويدك بخطوات (أو سكريبت نشر).
+  -->
+</body>
+</html>
